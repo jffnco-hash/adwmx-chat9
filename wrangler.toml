@@ -1,0 +1,24 @@
+# سيرفر ADWMX الجديد : Worker + قاعدة D1 جديدة فاضية — مفيش أي مستخدمين قدام.
+name = "adwmx-chat9"
+main = "worker.js"
+compatibility_date = "2026-11-05"
+workers_dev = true
+preview_urls = false
+
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "adwmx2"
+# من غير database_id: wrangler بينشئ القاعدة adwmx2 تلقائياً أول نشر (Workers Builds أو wrangler deploy).
+# لو فضّلت تنشئها بإيدك من لوحة Cloudflare: أضف هنا سطر  database_id = "الـ-ID-بتاعها"
+
+[vars]
+# المطورين: أرقام مفصولة بفاصلة. كل واحد فيهم يدخل لوحة الإدارة (لازم يكون مسجّل حساب برقمه على السيرفر).
+# أضف رقمك:  "01xxxxxxxxx,+201037625810"   (ولازم نفس الأرقام في Dev.PHONE / Dev.EXTRA_PHONES بالتطبيق)
+DEVELOPER_PHONE = "+201037625810"
+# سيرفر الريلز والميديا (بيسمح بروابط ملفات الشات منه بس)
+MEDIA_HOST = "adwmx-reels2.jffnco.workers.dev"
+# "true" يعرض سبب الخطأ في التطبيق. غيّره لـ "false" بعد ما كل شي يشتغل.
+DEBUG = "true"

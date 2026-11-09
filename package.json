@@ -1,0 +1,14 @@
+{
+  "name": "adwmx2-worker",
+  "private": true,
+  "version": "4.0.0",
+  "type": "module",
+  "scripts": {
+    "setup": "node setup.mjs",
+    "deploy": "wrangler deploy",
+    "ping": "node check.mjs",
+    "test": "node --experimental-sqlite selftest.mjs",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": { "wrangler": "^4" }
+}
